@@ -95,12 +95,8 @@ class MainScaffoldBody extends StatelessWidget {
       }
     }
 
-    if (!modFitsOnBar ||
-        GameMethods.shouldShowAlliesDeck() ||
-        perksAvailable && getIt<Settings>().showAmdDeck.value) {
-      sectionWidth -= 153 * barScale; //width of amd
-    }
 
+    sectionWidth -= 153 * barScale; //width of amd
     return sectionWidth;
   }
 
@@ -144,7 +140,6 @@ class MainScaffoldBody extends StatelessWidget {
                           GameState gameState = getIt<GameState>();
                           double barScale =
                               getIt<Settings>().userScalingBars.value;
-                          bool hasLootDeck = GameMethods.hasLootDeck();
                           bool modFitsOnBar = modifiersFitOnBar(context);
 
                           final Character? currentCharacter =
@@ -189,7 +184,7 @@ class MainScaffoldBody extends StatelessWidget {
                                         ),
                                       Column(children: [
                                         const CharacterAmdsWidget(),
-                                        if (hasLootDeck)
+                                        if (GameMethods.hasLootDeck())
                                           Container(
                                             margin: EdgeInsets.only(
                                               top: 4 * barScale,
