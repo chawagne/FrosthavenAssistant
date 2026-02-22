@@ -22,7 +22,7 @@ class SetCharacterLevelMenu extends StatefulWidget {
 class SetCharacterLevelMenuState extends State<SetCharacterLevelMenu> {
   final GameState _gameState = getIt<GameState>();
   final TextEditingController nameController = TextEditingController();
-  final FocusNode focusNode = FocusNode();
+  final FocusNode focusNode = FocusNode(skipTraversal: true);
 
   void _focusNodeListener() {
     if (!focusNode.hasFocus) {

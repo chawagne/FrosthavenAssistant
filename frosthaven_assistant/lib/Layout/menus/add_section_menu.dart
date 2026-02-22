@@ -99,6 +99,7 @@ class AddSectionMenuState extends State<AddSectionMenu> {
                   Container(
                     margin: const EdgeInsets.only(left: 10, right: 10),
                     child: TextField(
+                      focusNode: FocusNode(skipTraversal: true),
                       controller: _controller,
                       keyboardType: getIt<Settings>().softNumpadInput.value
                           ? TextInputType.none

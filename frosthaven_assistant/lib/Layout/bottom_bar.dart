@@ -63,9 +63,9 @@ class BottomBar extends StatelessWidget {
                                     getIt<Settings>().showAmdDeck.value &&
                                     getIt<GameState>().currentCampaign.value !=
                                         "Buttons and Bugs") //hide amd deck for buttons and bugs
-                                  const ModifierDeckWidget(
+                                  ExcludeFocus(child: const ModifierDeckWidget(
                                     name: '',
-                                  )
+                                  ))
                               ],
                             ));
                       }),

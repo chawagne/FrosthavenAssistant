@@ -156,6 +156,7 @@ class MonsterWidgetState extends State<MonsterWidget> {
                       roundState == RoundState.playTurns &&
                               ((hasInstances || isActive) && !specialDisabled)
                           ? InkWell(
+                              canRequestFocus: false,
                               onTap: () {
                                 getIt<GameState>()
                                     .action(TurnDoneCommand(widget.data.id));

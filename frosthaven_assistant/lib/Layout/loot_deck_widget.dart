@@ -230,6 +230,7 @@ class LootDeckWidgetState extends State<LootDeckWidget> {
                         return RepaintBoundary(child:Row(
                           children: [
                             InkWell(
+                                focusNode: FocusNode(skipTraversal: true),
                                 onTap: () {
                                   if (deck.drawPile.isNotEmpty) {
                                     setState(() {
@@ -281,6 +282,7 @@ class LootDeckWidgetState extends State<LootDeckWidget> {
                               width: 2 * userScalingBars,
                             ),
                             InkWell(
+                                focusNode: FocusNode(skipTraversal: true),
                                 onTap: () {
                                   openDialog(context, const LootCardsMenu());
                                 },

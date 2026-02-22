@@ -298,6 +298,7 @@ class MonsterAbilityCardWidgetState extends State<MonsterAbilityCardWidget> {
           _deckSize = deck.drawPile.size();
 
           return InkWell(
+            focusNode: FocusNode(skipTraversal: true),
               onTap: () {
                 //open deck menu
                 openDialog(

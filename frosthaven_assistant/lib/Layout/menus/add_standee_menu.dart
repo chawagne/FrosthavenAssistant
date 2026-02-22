@@ -77,21 +77,23 @@ class AddStandeeMenuState extends State<AddStandeeMenu> {
     return SizedBox(
       width: 40 * scale,
       height: 40 * scale,
-      child: TextButton(
-        child: Text(
-          text,
-          style: TextStyle(
-            color: color,
-            fontSize: 18 * scale,
-            shadows: [shadow],
+      child: ExcludeFocus(
+        child: TextButton(
+          child: Text(
+            text,
+            style: TextStyle(
+              color: color,
+              fontSize: 18 * scale,
+              shadows: [shadow],
+            ),
           ),
+          onPressed: () {
+            if (!isOut) {
+              _gameState.action(AddStandeeCommand(
+                  nr, null, widget.monster.id, type, addAsSummon));
+            }
+          },
         ),
-        onPressed: () {
-          if (!isOut) {
-            _gameState.action(AddStandeeCommand(
-                nr, null, widget.monster.id, type, addAsSummon));
-          }
-        },
       ),
     );
   }
@@ -182,19 +184,21 @@ class AddStandeeMenuState extends State<AddStandeeMenu> {
                         : Container(),
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       Text("Summoned:", style: getSmallTextStyle(scale)),
-                      Checkbox(
-                        checkColor: Colors.black,
-                        activeColor: Colors.grey.shade200,
-                        side: BorderSide(
-                            color: getIt<Settings>().darkMode.value
-                                ? Colors.white
-                                : Colors.black),
-                        onChanged: (bool? newValue) {
-                          setState(() {
-                            addAsSummon = newValue!;
-                          });
-                        },
-                        value: addAsSummon,
+                      ExcludeFocus(
+                        child: Checkbox(
+                          checkColor: Colors.black,
+                          activeColor: Colors.grey.shade200,
+                          side: BorderSide(
+                              color: getIt<Settings>().darkMode.value
+                                  ? Colors.white
+                                  : Colors.black),
+                          onChanged: (bool? newValue) {
+                            setState(() {
+                              addAsSummon = newValue!;
+                            });
+                          },
+                          value: addAsSummon,
+                        ),
                       )
                     ])
                   ],

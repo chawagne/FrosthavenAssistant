@@ -25,6 +25,14 @@ class CharacterWidget extends StatefulWidget {
 
 class CharacterWidgetState extends State<CharacterWidget> {
   final GameState _gameState = getIt<GameState>();
+  final FocusNode _focusNode = FocusNode(skipTraversal: true);
+
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
+  }
+
   @override
   void initState() {
     Character? character = GameMethods.getCharacterByName(widget.characterId);
@@ -95,6 +103,7 @@ class CharacterWidgetState extends State<CharacterWidget> {
     Character? character = GameMethods.getCharacterByName(widget.characterId);
     if (character != null) {
       return InkWell(
+         focusNode: _focusNode,
           onTap: () {
             //open stats menu
             openDialog(

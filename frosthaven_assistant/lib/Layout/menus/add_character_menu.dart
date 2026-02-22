@@ -192,6 +192,7 @@ class AddCharacterMenuState extends State<AddCharacterMenu> {
                   Container(
                     margin: const EdgeInsets.only(left: 10, right: 10),
                     child: TextField(
+                      focusNode: FocusNode(skipTraversal: true),
                       onChanged: (value) => _runFilter(value),
                       decoration: const InputDecoration(
                           labelText:

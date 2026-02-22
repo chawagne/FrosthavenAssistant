@@ -57,6 +57,7 @@ class BottomBarLevelWidget extends StatelessWidget {
     return RepaintBoundary(child:Material(
         color: Colors.transparent,
         child: InkWell(
+          focusNode: FocusNode(skipTraversal: true),
           onTap: () {
             openDialog(
               context,

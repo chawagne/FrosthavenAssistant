@@ -24,7 +24,7 @@ class SaveCharacterModalMenu extends StatefulWidget {
 
 class SaveCharacterModalMenuState extends State<SaveCharacterModalMenu> {
   final TextEditingController nameController = TextEditingController();
-  final FocusNode focusNode = FocusNode();
+  final FocusNode focusNode = FocusNode(skipTraversal: true);
 
   String _newSaveName = "";
 

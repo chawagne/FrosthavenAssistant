@@ -448,6 +448,7 @@ class SettingsMenuState extends State<SettingsMenu> {
                                 width: 200,
                                 //height: 40,
                                 child: TextField(
+                                  focusNode: FocusNode(skipTraversal: true),
                                   controller: _serverTextController,
                                   decoration: const InputDecoration(
                                     counterText: "",
@@ -461,6 +462,7 @@ class SettingsMenuState extends State<SettingsMenu> {
                                 width: 200,
                                 height: 40,
                                 child: TextField(
+                                  focusNode: FocusNode(skipTraversal: true),
                                   keyboardType: TextInputType.number,
                                   controller: _portTextController,
                                   decoration: const InputDecoration(
@@ -534,6 +536,7 @@ class SettingsMenuState extends State<SettingsMenu> {
                                 width: 200,
                                 height: 40,
                                 child: TextField(
+                                  focusNode: FocusNode(skipTraversal: true),
                                   controller: _portTextController,
                                   keyboardType: TextInputType.number,
                                   decoration: const InputDecoration(

@@ -286,7 +286,7 @@ class SelectScenarioMenuState extends State<SelectScenarioMenu> {
                     child: RawKeyboardListener(
                         //needed to trigger onEditingComplete on enter
                         //TODO: add this to the other menus
-                        focusNode: FocusNode(),
+                        focusNode: FocusNode(skipTraversal: true),
                         onKey: (event) {
                           if (kDebugMode) {
                             print(event.data.logicalKey.keyId);
@@ -301,6 +301,7 @@ class SelectScenarioMenuState extends State<SelectScenarioMenu> {
                           }
                         },
                         child: TextField(
+                          focusNode: FocusNode(skipTraversal: true),
                           onChanged: (value) => _runFilter(value),
                           controller: _controller,
                           onTap: () {

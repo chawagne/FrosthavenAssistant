@@ -601,6 +601,7 @@ class MonsterStatCardWidget extends StatelessWidget {
                           bool allStandeesOut =
                               data.monsterInstances.length == data.type.count;
                           return IconButton(
+                            focusNode: FocusNode(skipTraversal: true),
                             padding: const EdgeInsets.only(right: 8, top: 8),
                             icon: Image.asset(
                                 height: 20 * scale,
@@ -625,6 +626,7 @@ class MonsterStatCardWidget extends StatelessWidget {
                       valueListenable: getIt<GameState>().commandIndex,
                       builder: (context, value, child) {
                         return IconButton(
+                            focusNode: FocusNode(skipTraversal: true),
                             padding: const EdgeInsets.only(left: 8, top: 8),
                             icon: Image.asset(
                                 color: data.monsterInstances.length ==

@@ -71,36 +71,48 @@ class TopBar extends StatelessWidget {
                   );
                 }),
             actions: [
-              ElementButton(
-                  key: UniqueKey(),
-                  color: const Color.fromARGB(255, 226, 66, 30),
-                  element: Elements.fire,
-                  icon: 'assets/images/psd/element-fire.png'),
-              ElementButton(
-                  key: UniqueKey(),
-                  color: const Color.fromARGB(255, 85, 200, 239),
-                  element: Elements.ice,
-                  icon: 'assets/images/psd/element-ice.png'),
-              ElementButton(
-                  key: UniqueKey(),
-                  color: const Color.fromARGB(255, 152, 176, 181),
-                  element: Elements.air,
-                  icon: 'assets/images/psd/element-air.png'),
-              ElementButton(
-                  key: UniqueKey(),
-                  color: const Color.fromARGB(255, 124, 168, 42),
-                  element: Elements.earth,
-                  icon: 'assets/images/psd/element-earth.png'),
-              ElementButton(
-                  key: UniqueKey(),
-                  color: const Color.fromARGB(255, 236, 166, 15),
-                  element: Elements.light,
-                  icon: 'assets/images/psd/element-light.png'),
-              ElementButton(
-                  key: UniqueKey(),
-                  color: const Color.fromARGB(255, 31, 50, 131),
-                  element: Elements.dark,
-                  icon: 'assets/images/psd/element-dark.png'),
+              ExcludeFocus(
+                child: ElementButton(
+                    key: UniqueKey(),
+                    color: const Color.fromARGB(255, 226, 66, 30),
+                    element: Elements.fire,
+                    icon: 'assets/images/psd/element-fire.png'),
+              ),
+              ExcludeFocus(
+                child: ElementButton(
+                    key: UniqueKey(),
+                    color: const Color.fromARGB(255, 85, 200, 239),
+                    element: Elements.ice,
+                    icon: 'assets/images/psd/element-ice.png'),
+              ),
+              ExcludeFocus(
+                child: ElementButton(
+                    key: UniqueKey(),
+                    color: const Color.fromARGB(255, 152, 176, 181),
+                    element: Elements.air,
+                    icon: 'assets/images/psd/element-air.png'),
+              ),
+              ExcludeFocus(
+                child: ElementButton(
+                    key: UniqueKey(),
+                    color: const Color.fromARGB(255, 124, 168, 42),
+                    element: Elements.earth,
+                    icon: 'assets/images/psd/element-earth.png'),
+              ),
+              ExcludeFocus(
+                child: ElementButton(
+                    key: UniqueKey(),
+                    color: const Color.fromARGB(255, 236, 166, 15),
+                    element: Elements.light,
+                    icon: 'assets/images/psd/element-light.png'),
+              ),
+              ExcludeFocus(
+                child: ElementButton(
+                    key: UniqueKey(),
+                    color: const Color.fromARGB(255, 31, 50, 131),
+                    element: Elements.dark,
+                    icon: 'assets/images/psd/element-dark.png'),
+              ),
             ],
           );
         });
